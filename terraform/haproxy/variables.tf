@@ -24,3 +24,7 @@ variable "haproxy_name" {
   type    = "string"
   default = "anyric-haproxy-instance"
 }
+
+resource "google_compute_address" "haproxy_static_ip" {
+  name = "ipv4-address"
+}

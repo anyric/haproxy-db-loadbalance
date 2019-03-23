@@ -20,6 +20,7 @@ resource "google_compute_instance" "master_instance" {
     # A default network is created for all GCP projects
     network       = "default"
     access_config = {
+      nat_ip = "${google_compute_address.master_static_ip.address}"
     }
   }
 

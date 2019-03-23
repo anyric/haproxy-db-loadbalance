@@ -20,6 +20,7 @@ resource "google_compute_instance" "slave1_instance" {
     # A default network is created for all GCP projects
     network       = "default"
     access_config = {
+      nat_ip = "${google_compute_address.slave1_static_ip.address}"
     }
   }
 
@@ -53,6 +54,7 @@ resource "google_compute_instance" "slave2_instance" {
     # A default network is created for all GCP projects
     network       = "default"
     access_config = {
+      nat_ip = "${google_compute_address.slave2_static_ip.address}"
     }
   }
 

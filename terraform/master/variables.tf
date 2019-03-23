@@ -24,3 +24,7 @@ variable "master_name" {
   type    = "string"
   default = "anyric-master-instance"
 }
+
+resource "google_compute_address" "master_static_ip" {
+  name = "ipv4-address"
+}

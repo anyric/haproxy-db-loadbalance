@@ -29,3 +29,10 @@ variable "slave2_name" {
   type    = "string"
   default = "anyric-slave2-instance"
 }
+
+resource "google_compute_address" "slave1_static_ip" {
+  name = "ipv4-address"
+}
+resource "google_compute_address" "slave2_static_ip" {
+  name = "ipv4-address"
+}
