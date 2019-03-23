@@ -1,4 +1,7 @@
 # HAProxy Postgresql Database Load balancing
+## Network Setup Diagram
+![Network Diagram](/image/db.png "Network Diagram") 
+
 ## Introduction
 This repo contains setup instruction for Postgres Database Loadbalancing a Master and two slave servers using HAProxy server.
 
