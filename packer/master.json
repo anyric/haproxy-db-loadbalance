@@ -1,0 +1,43 @@
+{
+	"variables": {
+		"service_account_json": "./ssl/account.json",
+		"project_id": "{{env `PROJECT_ID`}}"
+	},
+	"builders": [
+		{
+			"type": "googlecompute",
+			"project_id": "{{user `project_id`}}",
+			"machine_type": "n1-standard-1",
+			"source_image": "ubuntu-1604-xenial-v20170815a",
+			"region": "europe-west1",
+			"zone": "europe-west1-b",
+			"ssh_username": "ubuntu",
+			"image_description": "final image for master",
+			"image_family": "ubuntu-1604-lts",
+			"image_name": "master-base-image",
+			"disk_size": 10,
+			"account_file": "{{ user `service_account_json`}}"
+		}
+	],
+	"provisioners": [
+    {
+			"type": "file",
+			"source": "./configs/postgresql.conf",
+			"destination": "/home/ubuntu/"
+    },
+    {
+			"type": "file",
+			"source": "./configs/pg_hba.conf",
+			"destination": "/home/ubuntu/"
+		},
+		{
+			"type": "file",
+			"source": "./scripts/master.sh",
+			"destination": "/home/ubuntu/"
+		},
+		{
+			"type": "shell",
+			"script": "setup_db.sh"
+    }
+	]
+}
