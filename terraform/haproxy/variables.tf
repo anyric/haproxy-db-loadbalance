@@ -9,7 +9,7 @@ variable "zone" {
 }
 variable "haproxy_image" {
   type    = "string"
-  default = "ubuntu-1604-xenial-v20170815a"
+  default = "haproxy-base-image"
 }
 
 variable "machine_type" {
@@ -19,6 +19,7 @@ variable "machine_type" {
 
 variable "haproxy_name" {
   type    = "string"
+  default = "haproxy-server"
 }
 
 resource "google_compute_address" "haproxy_static_ip" {

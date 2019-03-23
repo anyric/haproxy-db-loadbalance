@@ -9,7 +9,7 @@ variable "zone" {
 }
 variable "master_image" {
   type    = "string"
-  default = "ubuntu-1604-xenial-v20170815a"
+  default = "master-base-image"
 }
 
 variable "machine_type" {
@@ -19,6 +19,7 @@ variable "machine_type" {
 
 variable "master_name" {
   type    = "string"
+  default = "master-server"
 }
 
 resource "google_compute_address" "master_static_ip" {

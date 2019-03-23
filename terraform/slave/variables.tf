@@ -9,7 +9,7 @@ variable "zone" {
 }
 variable "slave_image" {
   type    = "string"
-  default = "ubuntu-1604-xenial-v20170815a"
+  default = "slave-base-image"
 }
 
 variable "machine_type" {
@@ -19,10 +19,12 @@ variable "machine_type" {
 
 variable "slave1_name" {
   type    = "string"
+  default = "slave1-server"
 }
 
 variable "slave2_name" {
   type    = "string"
+  default = "slave2-server"
 }
 
 resource "google_compute_address" "slave1_static_ip" {
