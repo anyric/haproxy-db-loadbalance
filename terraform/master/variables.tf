@@ -1,14 +1,11 @@
 variable "project_id" {
   type = "string"
-  default = "andela-learning"
 }
 variable "region" {
   type = "string"
-  default = "europe-west1"
 }
 variable "zone" {
   type = "string"
-  default = "europe-west1-b"
 }
 variable "master_image" {
   type    = "string"
@@ -22,7 +19,6 @@ variable "machine_type" {
 
 variable "master_name" {
   type    = "string"
-  default = "anyric-master-instance"
 }
 
 resource "google_compute_address" "master_static_ip" {
